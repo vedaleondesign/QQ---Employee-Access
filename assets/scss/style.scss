@@ -1,0 +1,619 @@
+$light: #F4F6F7;
+$yellow:#FFC627;
+$yellow2:#FBB03B;
+$blue:#0D2240;
+$grey:#7B7B7B;
+$border: #EDEDED;
+
+body{
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    min-height:100vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+	font:14px/1.4em roboto, arial, sans-serif;
+	font-weight:400;
+	color:$grey;
+	&.login{
+		background:$light;
+		justify-content: center;
+		align-items: center;
+	}
+	section.main-body{
+		flex-grow:1;
+	}
+}
+
+// HEADING
+h1, h2, h3, h4, h5{
+	font-family:roboto, arial, sans-serif;
+	line-height:1.2em;
+	margin:0;
+	padding:0;
+}
+h1{
+	color:$blue;
+	font-size:2em;
+	font-weight:500;
+	margin-top:3px;
+	&:before{
+		content:url(../img/arrow.svg);
+		display: inline-block;
+		width:14px;
+		vertical-align: middle;
+		margin-right:10px;
+		position: relative;
+		top:-2px;
+	}
+}
+h2{
+	color:$blue;
+	font-size:1.6em;
+	font-weight:400;
+	margin-bottom:30px;
+}
+h3{
+	font-size:1.2em;
+	font-weight:bold;
+	color:$blue;
+	margin-bottom:20px;
+}
+h4{
+	font-size:.8em;
+	font-weight:bold;
+	color:$blue;
+}
+// COPYRIGHT
+.copyright{
+	color:$grey;
+	font-size:.8em;
+	padding:15px 0;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	span.dot{
+		margin:0 10px;
+		width:3px;
+		height:3px;
+		background:$grey;
+		border-radius:100%;
+		display: inline-block;
+	}
+	a{
+		color:inherit;
+		&:hover, &:active, &:focus{
+			text-decoration: none;
+			color:#444F62;
+		}
+	}
+}
+
+// LOGIN
+.sign-in{
+	background:#fff;
+	box-shadow:0px 1px 5px rgba(0,0,0,.1);
+	width:100%;
+	max-width:550px;
+	.header{
+		border-top:2px solid $yellow;
+		padding:30px 30px;
+		box-sizing:border-box;
+		border-bottom: 1px solid $border;
+		.logo{
+			width:60%;
+			max-width: 180px;
+			max-height: 45px;
+		}
+	}
+	.body{
+		padding:30px 35px;
+	}
+	.login-link{
+		display: block;
+		color:$yellow2;
+		font-weight:600;
+		margin:3px 0px;
+		outline:none  !important;
+		box-shadow:none !important;
+	}
+}
+
+
+// BUTTONS
+.main-buttons{
+	margin:30px 0;
+	div{
+		display: inline-block;
+	}
+	.text-right{float:right; button{margin-left:10px;}}
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+	box-shadow:none !important;
+}
+.btn{
+	border:0px;
+	border-radius:3px;
+	min-width:160px;
+	padding: .675rem .75rem;
+	&.btn-primary{
+		background:$yellow;
+		color:$blue;
+		&:focus, &:active{
+			background:$blue !important;
+			color:$yellow !important;
+			box-shadow:none !important;
+		}
+	}
+	&.btn-secondary{
+		background:$blue;
+		color:$yellow;
+		&:focus, &:active{
+			background:$yellow !important;
+			color:$blue !important;
+			box-shadow:none !important;
+		}
+	}
+}
+
+// INPUTS
+.form-group{
+	margin-bottom:20px;
+}
+.form-label{
+	color:$yellow2;
+	font-weight:500;
+}
+.form-control{
+	border-color:$border;
+	font-size:1em;
+	padding:12px 20px;
+	height:50px;
+	border-radius:3px;
+	&:focus{
+		box-shadow:none;
+		border-color:#B8C1C6;
+	}
+}
+.form-group.dropdown{
+	position: relative;
+	&:after{
+	  position: absolute;
+	  bottom:20px;
+	  right:33px;
+	  content:"";
+	  width: 0; 
+	  height: 0; 
+	  border-left: 6px solid transparent;
+	  border-right: 6px solid transparent;
+	  border-top: 6px solid #B8C1C6;
+	  pointer-events:none;
+	}
+}
+.form-group.calendar{
+	position: relative;
+	&:before{
+		content:url(../img/calendar.svg);
+		position: absolute;
+		bottom:15px;
+		right:33px;
+		z-index: 100;
+		width:12px;
+		pointer-events:none;
+	}
+}
+.dropdown-menu{
+	border:1px solid #B8C1C6;
+	max-width:93%;
+	border-radius:3px;
+	padding:0;
+	box-shadow:0px 2px 3px rgba(0,0,0,.05);
+	.list{
+		list-style: none;
+		padding:0;
+		margin:0px;
+		li{
+			color:$grey;
+			padding:15px;
+			font-size:.9em;
+			border-bottom:1px solid $border;
+			cursor: pointer;
+			&:hover, &:focus{
+				color:$blue;
+			}
+		}
+	}
+}
+.check-group{
+	position: relative;
+	border-top:1px solid $border;
+	padding-top:20px;
+	input[type="checkbox"]{
+		position: absolute;
+		top:0;
+		left:0;;
+		opacity: 0;
+	}
+	label{
+		&:before{
+			margin-left:10px;
+			content:"";
+			width:18px;
+			height:18px;
+			vertical-align: middle;
+			display: inline-block;
+			border:1px solid $border;
+			background:$light;
+			border-radius:100%;
+			margin-right:0px;
+			position: relative;
+			box-sizing:border-box;
+			top:0px;
+			float:left;
+
+		}
+	}
+	input[type="checkbox"]:checked ~ label{
+		color:$blue;
+	}
+	input[type="checkbox"]:checked ~ label:before{
+		background:$blue;
+		border:6px solid $yellow;
+	}
+}
+
+
+//DATEPICKER
+.date-picker-wrapper{
+	left:0;
+	padding:0px !important;
+		border:1px solid #B8C1C6 !important;
+	border-radius:3px !important;
+	box-shadow:0px 2px 3px rgba(0,0,0,.05) !important;
+	font-family:roboto, arial;
+	font-size:1em !important;
+	.footer{display:none;}
+	.month-wrapper{
+		.week-name{
+			    height: 40px !important;
+			color:$yellow2;
+			font-size:.9em;
+		}
+		padding:10px !important;
+		border:0px !important;
+		table .day{
+			padding:8px !important;
+			font-size:1em !important;
+			border-radius:3px;
+			color:$grey !important;
+			&.real-today{
+				background:$light !important;
+			}
+			&.hovering, &:hover{
+				color:$blue !important;
+				background:$yellow !important;
+			}
+			&.first-date-selected{
+				color:$blue !important;
+				background:$yellow !important;
+			}
+		}
+	}
+	.month-name{
+		color:$blue;
+	}
+}
+
+
+//HEADER
+header{
+	border-top:2px solid $yellow;
+	box-shadow:0px 1px 2px rgba(0,0,0,.05);
+	position: relative;
+	z-index:10;
+	.container{
+		padding:30px 0px;
+		box-sizing:border-box;
+	}
+	.logo{
+		width:60%;
+		max-width: 180px;
+		max-height: 45px;
+	}
+}
+.heading{
+	background:$light;
+	padding:30px 0;
+	h1{display:inline-block;}
+	.current-flight{
+		float:right;
+		h4{
+			font-size:1.2em; 
+			display:inline-block;
+			color:$blue;
+			font-weight: 400;
+			&.pnr{
+				background:$yellow;
+				padding:10px 15px;
+				margin-left:10px;
+				border-radius:3px;
+			}
+		}
+	}
+}
+.intro{
+	padding:25px 0 10px;
+}
+
+
+// FOOTER
+footer{
+	background:$light;
+}
+
+
+// content
+.row.reverse{
+	flex-direction:row-reverse;
+}
+.row.bordered{
+	border:1px solid $border;
+	.col-md-9{
+		border-right:1px solid $border;
+	}
+}
+.row.form{
+	padding:25px 20px 15px;
+	&.details > div{margin-bottom:15px;}
+}
+.seperation span{
+	display:block;
+	background:$light;
+	color:$blue;
+	text-align:center;
+	padding:6px;
+	font-weight:bold;
+	margin-bottom:20px;
+	font-size:.8em;
+	letter-spacing:1px;
+}
+
+// BOOKINGS
+.booking.title{
+	font-weight:bold;
+	text-transform:uppercase;
+	color:$blue;
+	border-bottom:1px solid $border;
+	.button-wrap{
+		text-align: center;
+	}
+}
+.booking{
+	padding:30px 0;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	border-bottom:1px solid $border;
+	.flight-wrap{
+		width:90%;
+		order:1;
+		.flight{
+			padding:3px 0px;
+			width:100%;
+			display: flex;
+			flex-wrap:wrap;
+			.sm{width:12%;}
+			.lg{width:26%;}
+		}
+	}
+	.button-wrap{
+		width:10%;
+		order:2;
+	}
+}
+.btn-book{
+	min-width:100%;
+	border-radius:3px;
+	border:1px solid $yellow2;
+	color:$yellow2;
+	&:hover, &:focus, &:active{
+		background:$yellow !important;
+		color:$blue !important;
+		box-shadow:none !important;
+	}
+}
+@media (max-width: 967.98px) { 
+.heading{
+	background:$light;
+	padding:20px 0;
+	h1{
+		display:inline-block; font-size:1.5em;
+		&:before{width:10px;}
+	}
+}
+
+	.row.form {
+    padding: 25px 10px 10px;
+	}
+	.row.bordered .col-md-9{
+		border-right:0px;
+		border-top:1px solid $border;
+	}
+	.row.bordered .border-left{
+		border-left:0px;
+		border-top:1px solid $border;
+		time{display:none;}
+	}
+	.main-buttons{
+		margin:30px 0 20px;;
+		display:flex;
+		flex-direction:column-reverse;
+		div{
+			display: block;
+			width:100%;
+		}
+		button{min-width:100%; margin-bottom:10px;}
+		.text-right{float:none; button{margin-left:0px;}}
+	}
+
+	.heading .current-flight h4:first-child{display:none;}
+	.booking.title{
+		display: none;
+	}
+	.booking{
+		.flight-wrap, .button-wrap{width:100%;}
+		.button-wrap{margin-top:20px;}
+		.flight-wrap .flight{
+			width:49%;
+			display: inline-block;
+			.sm{width:100%}
+			.lg{width:100%}
+		}
+	}
+	.flight-wrap .flight > div{
+		&:before{
+			display: block;
+			text-transform: uppercase;
+			font-size:.8em;
+			color:$blue;
+			line-height: 1em;
+			margin-top:10px;
+			margin-bottom:2px;
+			font-weight:bold;
+		}
+		&.flight-no:before{content:"Flight";}
+		&.route:before{content:"route";}
+		&.date:before{content:"date";}
+		&.departure:before{content:"departure";}
+		&.arrival:before{content:"arrival";}
+		&.status:before{content:"status";}
+	}
+}
+.bookingTwo.title{
+	font-weight:bold;
+	text-transform:uppercase;
+	color:$blue;
+	padding:30px 0;
+	border-bottom:1px solid $border;
+	.flight-wrap .flight{padding:3px 0px;}
+}
+.bookingTwo{
+	padding:0 0 0;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	border-bottom:1px solid $border;
+	.flight-wrap{
+		width:100%;
+		order:1;
+		.flight{
+			clear:both;
+			padding:30px 0px 20px;
+			width:100%;
+			display: flex;
+			flex-wrap:wrap;
+			position: relative;
+			.sm{width:12%;}
+			.lg{width:26%;}
+			&.depart{border-bottom:1px solid $border;}
+		}
+		.flight label{
+			padding:3px 0px;
+			width:100%;
+			display: flex;
+			flex-wrap:wrap;
+			.sm{width:12%;}
+			.lg{width:26%;}
+		}
+	}
+	.radio-flight{
+		position: absolute;
+		top:0px;
+		left:0px;
+		opacity: 0;
+	}
+	.radio-flight ~ label{
+		.flight-no:after{
+			content:"";
+			width:18px;
+			height:18px;
+			vertical-align: middle;
+			display: inline-block;
+			border:1px solid $border;
+			background:$light;
+			border-radius:100%;
+			margin-right:10px;
+			position: relative;
+			box-sizing:border-box;
+			top:0px;
+			float:left;
+		}
+	}
+	.radio-flight:checked ~ label{
+		color:$blue;
+		.flight-no{
+			&:after{
+				background:$blue;
+				border:6px solid $yellow;
+			}
+		}
+	}
+}
+@media (max-width: 967.98px) { 
+	.bookingTwo.title{
+		display: none;
+	}
+	.bookingTwo{
+		width:100%;
+		.flight-wrap{width:100%;}
+		.flight-wrap .flight label{
+			width:100%;
+			display: inline-block;
+			.sm{width:100%}
+			.lg{width:100%}
+		}
+	}
+	.flight-wrap .flight label > div{
+		margin-bottom:10px;
+		&:before{
+			display: inline-block;
+			text-transform: uppercase;
+			font-size:1;
+			color:$blue;
+			font-weight:bold;
+			width:120px;;
+		}
+		&.flight-no:before{content:"Flight";}
+		&.route:before{content:"route";}
+		&.date:before{content:"date";}
+		&.departure:before{content:"departure";}
+		&.arrival:before{content:"arrival";}
+		&.status:before{content:"status";}
+	}
+	.radio-flight ~ label{
+		.flight-no:after{
+			display: none !important;
+		}
+		&:after{
+			border-radius:3px;
+			content:"Select Flight";
+			position: relative;
+			bottom:0px;
+			color:$yellow2;
+			bottom:0px;
+			border:1px solid $yellow;
+			width:100%;
+			margin-top:15px;
+			text-align: center;
+			padding:15px;
+			display: block;
+			font-size:1.1em;
+		}
+	}
+	.radio-flight:checked ~ label:after{
+		content:"Flight Selected";
+		background:$yellow;
+		color:$blue;
+	}
+}
